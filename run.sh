@@ -1,0 +1,1 @@
+nohup python ./hnit-acm-web/app.py >>nohup.log &
