@@ -37,7 +37,7 @@
                         <a href="#welcome">欢迎</a>
                     </li>
                     <li>
-                        <a href="{{ acm.index }}">首页</a>
+                        <a href="{{ url_for('acm.index') }}">首页</a>
                     </li>
                     <li>
                         <a href="http://doc.aldebaran.com/2-8/naoqi/index.html" target="_blank">技术</a>
@@ -71,7 +71,7 @@
                         </h1>
                     </div>
                     <div>
-                        <a href="{{ url_for('acm.index') }}" target="_blank"
+                        <a href="{{ url_for('acm.login') }}" target="_blank"
                            class="btn btn-default">报名</a>&nbsp;&nbsp;
                         <a href="{{ url_for('acm.robot') }}" target="_blank"
                            class="btn btn-default">机器人入口</a>&nbsp;&nbsp;
