@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="never">
+    <meta charset="utf-8">
+    <link rel="shortcut icon"
+          href="https://img2018.cnblogs.com/blog/1627056/201909/1627056-20190910154326049-394994833.jpg">
+    <title>ACM报名</title>
+    <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <style>
+        body {
+            background-image: url("https://img2018.cnblogs.com/blog/1627056/201909/1627056-20190917094822495-1056888466.gif");
+            background-repeat: repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="text-align: center;color: yellowgreen"><br>
+    <h2>2020 ACM招新</h2>
+</div>
+
+<div class=container"><br>
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-4">
+            <form action="{{ url_for('acm.login') }}" method=post role="form">
+                <div class="FM" align="center">
+                    <label style="color: #5cb85c;" for="group">
+                        Group：<br>
+                        <select class="form-control" name="group" id="group" style="width: 200px;height: 36px">
+                            <option value="ACM">ACM</option>
+                            <option value="机器人">机器人</option>
+                            <option value="软件组">软件组</option>
+                        </select>
+                    </label>
+                    <br>
+                    <label style="color: #5cb85c;text-align: left" for="major">Major:</label>
+                    <input type="text" class="form-control" style="width: 200px;" id="major" name="major"
+                           placeholder="专业"/>
+                    <label style="color: #5cb85c;text-align: left" for="classes">Classes:</label>
+                    <input type="text" class="form-control" style="width: 200px" id="classes" name="classes"
+                           placeholder="班级(4位，如1701)"/>
+                    <label style="color: #5cb85c;text-align: left" for="studentNum">StudentNum:</label>
+                    <input type="text" class="form-control" style="width: 200px" id="studentNum" name="studentNum"
+                           placeholder="学号(11位)"/>
+                    <label style="color: #5cb85c;text-align: left" for="name">Name:</label>
+                    <input type="text" class="form-control" style="width: 200px" id="name" name="name"
+                           placeholder="姓名"/>
+                    <label style="color: #5cb85c;text-align: left" for="phoneNum">PhoneNum:</label>
+                    <input type="text" class="form-control" style="width: 200px" id="phoneNum" name="phoneNum"
+                           placeholder="手机号(11位)"/>
+                    <label style="color: #5cb85c;text-align: left" for="qqNum">QQNum:</label>
+                    <input type="text" class="form-control" style="width: 200px" id="qqNum" name="qqNum"
+                           placeholder="联系QQ"/>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success" style="display:block;margin:0 auto">确认并提交</button>
+            </form>
+            <hr>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if "Error" not in message[1] %}
+                            <div class="alert alert-info">
+                                <strong></strong> {{ message[1] }}
+                            </div>
+                        {% endif %}
+                        {% if "Error" in message[1] %}
+                            <div class="alert alert-danger">
+                                <strong></strong> {{ message[1] }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <br>
+    </div>
+</div>
+<footer id="footer1" style="color: rgb(255 69 0);   text-align: center; font-size: 13px; padding-bottom:18px;">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    Designed By Coodyz/Hzh<br>
+    ©2020 HNIT-ACM
+</footer>
+</body>
+</html>
