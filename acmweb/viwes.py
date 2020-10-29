@@ -205,4 +205,4 @@ def login():
         else:
             flash(message=f"Error: {valid}", category='error')
         return redirect(url_for("acm.login"))
-    return render_template('login.html')
+    return render_template('login.html', starttime=ad.starttime, endtime=ad.endtime)
